@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ★ Open Graph / 카카오톡 링크 카드 (이미지 없음 — 텍스트 카드) ★
+     YOUR_USERNAME / YOUR_REPO 를 실제 값으로 교체하세요.
+-->
+<meta property="og:type"         content="website">
+<meta property="og:url"          content="https://YOUR_USERNAME.github.io/YOUR_REPO/">
+<meta property="og:title"        content="2026 병오년 — 문명 대전환의 원년">
+<meta property="og:description"  content="AI 문명과 원형지능, 우주일년 개벽관, 빛의 인간 아리랑. CES 2026에서 바라본 문명의 대전환점과 한국 정신문화의 원형적 지혜를 그래픽 레코딩으로 담았습니다.">
+<meta property="og:locale"       content="ko_KR">
+<meta property="og:site_name"    content="병오년 문명대전환 인포그래픽">
+<meta name="description"         content="AI 문명과 원형지능, 우주일년 개벽관, 빛의 인간 아리랑. CES 2026에서 바라본 문명의 대전환점과 한국 정신문화의 원형적 지혜를 그래픽 레코딩으로 담았습니다.">
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="2026 병오년 — 문명 대전환의 원년">
+<meta name="twitter:description" content="AI 문명과 원형지능, 우주일년 개벽관, 빛의 인간 아리랑.">
+
+<title>2026 병오년 — 문명 대전환의 원년</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== CSS 변수 ===== */
+:root {
+  --burg:   #593C47;
+  --yellow: #F2E63D;
+  --gold:   #F2C53D;
+  --orange: #F25C05;
+  --red:    #F24405;
+  --cream:  #FDF6E3;
+  --ink:    #1A0A10;
+  --mist:   rgba(89,60,71,0.08);
+  --glass:  rgba(255,255,255,0.72);
+  --shadow: 0 4px 32px rgba(89,60,71,0.13);
+}
+
+/* ===== 리셋 & 기본 ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #1A0A10;
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ===== 배경 노이즈 텍스처 ===== */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(242,198,61,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(89,60,71,0.25) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ===== 메인 래퍼 ===== */
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  position: relative; z-index: 1;
+}
+
+/* ===== 히어로 헤더 ===== */
+.hero {
+  background: linear-gradient(135deg, var(--burg) 0%, #3A1F2C 50%, #1A0A10 100%);
+  border-radius: 0 0 32px 32px;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 4vw, 60px) clamp(32px, 5vw, 60px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+/* 말 실루엣 배경 장식 */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -20px; bottom: -10px;
+  width: 340px; height: 280px;
+  background: rgba(242,198,61,0.06);
+  border-radius: 50% 30% 50% 30%;
+  transform: rotate(-15deg);
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-tag {
+  background: var(--gold);
+  color: var(--burg);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 30px;
+  letter-spacing: 0.05em;
+}
+
+.hero-date {
+  color: rgba(242,198,61,0.7);
+  font-size: 15px;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.hero-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--yellow);
+  text-shadow: 0 2px 24px rgba(242,198,61,0.3);
+  margin-bottom: 16px;
+  position: relative; z-index: 1;
+}
+
+.hero-title span {
+  background: linear-gradient(90deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(253,246,227,0.8);
+  max-width: 680px;
+  line-height: 1.7;
+  position: relative; z-index: 1;
+}
+
+/* 히어로 내 SVG 일러스트 */
+.hero-svg-wrap {
+  position: absolute;
+  right: clamp(20px, 5vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(160px, 22vw, 300px);
+  opacity: 0.92;
+}
+
+/* ===== 섹션 제목 ===== */
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--burg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.section-title::before {
+  content: '';
+  display: block;
+  width: 6px; height: 28px;
+  background: linear-gradient(180deg, var(--gold), var(--orange));
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ===== 그리드 레이아웃 ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* ===== 카드 ===== */
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(28px);
+}
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(89,60,71,0.2);
+}
+
+.card-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.card-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--burg);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.card-body {
+  font-size: clamp(18px, 1.6vw, 20px);
+  color: #3D2535;
+  line-height: 1.75;
+}
+
+/* 하이라이트 마커 효과 */
+.mark-yellow {
+  background: linear-gradient(120deg, var(--yellow) 0%, var(--yellow) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 85%;
+  padding: 0 2px;
+}
+.mark-gold {
+  background: linear-gradient(120deg, rgba(242,197,61,0.4) 0%, rgba(242,197,61,0.4) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 85%;
+  padding: 0 2px;
+}
+
+/* ===== 키워드 배지 ===== */
+.badge-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.badge {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+.badge-burg  { background: var(--burg);   color: var(--yellow); }
+.badge-gold  { background: var(--gold);   color: var(--burg); }
+.badge-orange{ background: var(--orange); color: #fff; }
+.badge-red   { background: var(--red);    color: #fff; }
+.badge-cream { background: var(--cream);  color: var(--burg); border: 1px solid var(--gold); }
+
+/* ===== 큰 인용 블록 ===== */
+.quote-block {
+  background: linear-gradient(135deg, var(--burg) 0%, #3A1F2C 100%);
+  border-radius: 20px;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  opacity: 0; transform: translateY(28px);
+}
+.quote-block.visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s, transform 0.7s; }
+.quote-block::before {
+  content: '❝';
+  position: absolute;
+  top: -10px; left: 20px;
+  font-size: 120px;
+  color: rgba(242,198,61,0.12);
+  font-family: serif;
+  line-height: 1;
+}
+.quote-text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--yellow);
+  line-height: 1.8;
+  position: relative; z-index: 1;
+}
+.quote-source {
+  margin-top: 16px;
+  font-size: 15px;
+  color: rgba(242,198,61,0.6);
+  position: relative; z-index: 1;
+}
+
+/* ===== 타임라인 ===== */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 40px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--orange), var(--red));
+  border-radius: 3px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 28px;
+  opacity: 0; transform: translateX(-20px);
+}
+.tl-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.5s, transform 0.5s; }
+.tl-dot {
+  position: absolute;
+  left: -28px; top: 4px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid #1A0A10;
+  box-shadow: 0 0 0 3px var(--gold);
+}
+.tl-year {
+  font-size: 15px; font-weight: 700;
+  color: var(--orange); margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.tl-content {
+  background: var(--glass);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: clamp(18px, 1.5vw, 19px);
+  color: var(--burg);
+  line-height: 1.7;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.tl-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--burg); margin-bottom: 6px;
+}
+
+/* ===== 차트 섹션 ===== */
+.chart-section {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.6);
+  margin-bottom: 40px;
+  opacity: 0; transform: translateY(28px);
+}
+.chart-section.visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s, transform 0.7s; }
+
+/* ===== 분리선 ===== */
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--orange), transparent);
+  border-radius: 2px;
+  margin: 40px 0;
+  opacity: 0.5;
+}
+
+/* ===== 화살표 연결선 (그래픽 레코딩 요소) ===== */
+.arrow-connect {
+  display: flex; align-items: center;
+  gap: 10px; margin: 16px 0;
+  font-size: 18px; color: var(--burg);
+}
+.arrow-connect::before, .arrow-connect::after {
+  content: '';
+  flex: 1; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--orange));
+  border-radius: 2px;
+}
+
+/* ===== 두 AI 비교 카드 ===== */
+.ai-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.ai-card {
+  background: var(--glass);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  opacity: 0; transform: translateY(28px);
+  text-align: center;
+}
+.ai-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s, transform 0.6s; }
+.ai-card.ai-tech  { border-color: rgba(242,92,5,0.4); }
+.ai-card.ai-origin{ border-color: rgba(242,198,61,0.5); }
+.ai-vs {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 900;
+  color: var(--yellow);
+  text-shadow: 0 0 20px rgba(242,198,61,0.5);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ===== 우주일년 도넛 차트 영역 ===== */
+.donut-section {
+  display: flex; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.donut-legend { flex: 1; min-width: 200px; }
+.legend-item {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+  font-size: clamp(18px, 1.5vw, 19px);
+  color: var(--burg);
+}
+.legend-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%; flex-shrink: 0;
+}
+
+/* ===== 바 차트 ===== */
+.bar-chart { margin-top: 16px; }
+.bar-row {
+  display: flex; align-items: center;
+  gap: 14px; margin-bottom: 14px;
+}
+.bar-label {
+  font-size: 18px; color: var(--burg);
+  min-width: 130px; font-weight: 500;
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1; height: 28px;
+  background: rgba(89,60,71,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%; border-radius: 14px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex; align-items: center;
+  justify-content: flex-end; padding-right: 10px;
+}
+.bar-fill span {
+  font-size: 15px; font-weight: 700;
+  color: #fff; white-space: nowrap;
+}
+.bar-row.animated .bar-fill { width: var(--target-width); }
+
+/* ===== 빛의 인간 섹션 ===== */
+.light-section {
+  background: linear-gradient(135deg, #FDF0D5 0%, #FFF9E6 50%, #FDF0D5 100%);
+  border-radius: 24px;
+  padding: 40px 36px;
+  border: 2px solid var(--gold);
+  position: relative; overflow: hidden;
+  margin-bottom: 40px;
+  opacity: 0; transform: translateY(28px);
+}
+.light-section.visible { opacity: 1; transform: translateY(0); transition: opacity 0.7s, transform 0.7s; }
+.light-section::before {
+  content: '☀';
+  position: absolute; right: 30px; top: 20px;
+  font-size: 100px;
+  opacity: 0.07;
+  animation: pulse-sun 3s ease-in-out infinite;
+}
+@keyframes pulse-sun {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.07; }
+  50%       { transform: scale(1.1) rotate(5deg); opacity: 0.12; }
+}
+
+/* ===== 경고 블록 ===== */
+.alert-block {
+  background: linear-gradient(135deg, rgba(242,68,5,0.1), rgba(242,92,5,0.08));
+  border-left: 5px solid var(--red);
+  border-radius: 0 16px 16px 0;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.alert-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--red); margin-bottom: 8px;
+}
+.alert-body {
+  font-size: clamp(18px, 1.5vw, 19px);
+  color: #4A1A0A;
+  line-height: 1.75;
+}
+
+/* ===== 푸터 ===== */
+footer {
+  background: linear-gradient(135deg, var(--burg), #1A0A10);
+  border-radius: 24px 24px 0 0;
+  padding: 40px 36px;
+  color: rgba(253,246,227,0.7);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-top: 60px;
+}
+footer strong { color: var(--gold); }
+.footer-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-bottom: 24px;
+}
+
+/* ===== 모바일 반응형 ===== */
+@media (max-width: 767px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .ai-compare { grid-template-columns: 1fr; }
+  .ai-vs { transform: rotate(90deg); display: inline-block; margin: 8px auto; }
+  .hero-svg-wrap { display: none; }
+  .donut-section { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .bar-label { min-width: 100px; font-size: 15px; }
+  .chart-section { padding: 20px 16px; }
+  .card { padding: 20px 16px; min-width: unset; width: 100%; }
+  .quote-block { padding: 24px 20px; }
+  .timeline { padding-left: 24px; }
+}
+
+/* ===== 태블릿 ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== 애니메이션 키프레임 ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  40%       { opacity: 0.7; }
+  60%       { opacity: 0.9; }
+}
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes popIn {
+  from { transform: scale(0.3); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes horse-gallop {
+  0%   { transform: translateX(0) scaleX(1); }
+  48%  { transform: translateX(18px) scaleX(1); }
+  50%  { transform: translateX(18px) scaleX(-1); }
+  98%  { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+.hero-title { animation: fadeUp 0.8s ease both; }
+.hero-sub   { animation: fadeUp 0.8s 0.2s ease both; }
+</style>
+</head>
+
+<body>
+<!-- ===== 히어로 헤더 ===== -->
+<div class="hero">
+  <!-- 히어로 말 SVG 일러스트 -->
+  <div class="hero-svg-wrap">
+    <svg viewBox="0 0 300 260" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block; overflow:visible;">
+      <!-- 말 실루엣 (불꽃 갈기) -->
+      <g style="animation: horse-gallop 4s ease-in-out infinite;">
+        <!-- 몸통 -->
+        <ellipse cx="155" cy="165" rx="68" ry="38" fill="rgba(242,92,5,0.85)"/>
+        <!-- 목 -->
+        <ellipse cx="100" cy="130" rx="22" ry="40" transform="rotate(-20 100 130)" fill="rgba(242,92,5,0.85)"/>
+        <!-- 머리 -->
+        <ellipse cx="72" cy="98" rx="26" ry="19" transform="rotate(-30 72 98)" fill="rgba(242,92,5,0.85)"/>
+        <!-- 코 -->
+        <ellipse cx="54" cy="107" rx="10" ry="7" transform="rotate(-10 54 107)" fill="rgba(242,198,61,0.9)"/>
+        <!-- 눈 -->
+        <circle cx="62" cy="90" r="4" fill="var(--yellow)"/>
+        <circle cx="62" cy="90" r="2" fill="#1A0A10"/>
+        <!-- 다리들 -->
+        <rect x="115" y="195" width="14" height="48" rx="7" fill="rgba(242,68,5,0.9)" transform="rotate(5 115 195)"/>
+        <rect x="138" y="198" width="14" height="46" rx="7" fill="rgba(242,68,5,0.9)" transform="rotate(-3 138 198)"/>
+        <rect x="170" y="196" width="14" height="47" rx="7" fill="rgba(242,68,5,0.9)" transform="rotate(8 170 196)"/>
+        <rect x="192" y="193" width="14" height="44" rx="7" fill="rgba(242,68,5,0.9)" transform="rotate(-6 192 193)"/>
+        <!-- 발굽 -->
+        <ellipse cx="122" cy="244" rx="9" ry="5" fill="rgba(89,60,71,0.8)"/>
+        <ellipse cx="145" cy="244" rx="9" ry="5" fill="rgba(89,60,71,0.8)"/>
+        <ellipse cx="177" cy="244" rx="9" ry="5" fill="rgba(89,60,71,0.8)"/>
+        <ellipse cx="199" cy="237" rx="9" ry="5" fill="rgba(89,60,71,0.8)"/>
+        <!-- 꼬리 -->
+        <path d="M218 158 Q255 140 248 110 Q242 85 260 70" stroke="rgba(242,198,61,0.8)" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M218 168 Q260 155 265 125" stroke="rgba(242,92,5,0.7)" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- 불꽃 갈기 -->
+      <g style="animation: flicker 1.5s ease-in-out infinite;">
+        <path d="M82 82 Q70 55 80 30 Q90 10 78 0 Q98 15 95 40 Q92 58 88 78" fill="var(--yellow)" opacity="0.9"/>
+        <path d="M95 78 Q88 50 100 20 Q108 5 100 -5 Q118 12 112 38 Q107 58 102 76" fill="var(--gold)" opacity="0.8"/>
+        <path d="M105 80 Q102 52 115 28 Q122 12 115 2 Q130 18 126 44 Q122 62 114 80" fill="var(--orange)" opacity="0.7"/>
+        <path d="M115 85 Q116 60 128 40 Q134 24 128 14 Q142 28 138 52 Q135 68 126 85" fill="var(--red)" opacity="0.6"/>
+      </g>
+      <!-- 별빛 장식 -->
+      <g style="animation: flicker 2.2s ease-in-out infinite;">
+        <polygon points="270,30 273,40 283,40 275,47 278,57 270,50 262,57 265,47 257,40 267,40" fill="var(--yellow)" opacity="0.7"/>
+        <polygon points="240,15 242,22 249,22 244,27 246,34 240,29 234,34 236,27 231,22 238,22" fill="var(--gold)" opacity="0.5"/>
+        <circle cx="280" cy="80" r="4" fill="var(--yellow)" opacity="0.6"/>
+        <circle cx="255" cy="55" r="3" fill="var(--gold)" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-meta">
+    <span class="hero-tag">🐎 2026 병오년(丙午年) 신년 메시지</span>
+    <span class="hero-date">2026년 1월 · 증산도 STV 상생방송</span>
+  </div>
+  <h1 class="hero-title">문명 대전환의 원년<br><span>빛의 인간으로 거듭나다</span></h1>
+  <p class="hero-sub">AI 문명의 질주와 원형지능의 귀환, 우주일년 개벽관으로 본 2026년의 의미와 한국 정신문화의 원형적 지혜</p>
+</div>
+
+<!-- ===== 메인 콘텐츠 ===== -->
+<div class="wrapper">
+
+  <!-- ===== 1. CES 2026 핵심 현황 ===== -->
+  <div class="section-title">🌐 CES 2026 — 피지컬 AI 시대의 개막</div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">참관 규모</div>
+      <div class="card-title">📊 역대 최대 규모</div>
+      <div class="card-body">
+        전 세계 <strong class="mark-yellow">14만 8,000명+</strong> 참관객,<br>
+        <strong class="mark-gold">4,200여 개</strong> 기업 참여.<br>
+        주제: <em>"혁신가들의 등장"</em>
+      </div>
+      <div class="badge-wrap">
+        <span class="badge badge-burg">AI</span>
+        <span class="badge badge-gold">로보틱스</span>
+        <span class="badge badge-orange">양자기술</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">핵심 전환</div>
+      <div class="card-title">🤖 피지컬 AI 시대</div>
+      <div class="card-body">
+        AI가 화면을 넘어 <strong class="mark-yellow">기온실 세계의 물리적 동작</strong>으로 확장.<br>
+        지속 가능 에너지와 결합한 문명의 대도약.
+      </div>
+      <div class="badge-wrap">
+        <span class="badge badge-orange">물리 세계 확장</span>
+        <span class="badge badge-cream">지속 가능 에너지</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">핵심 통찰</div>
+      <div class="card-title">⚡ 기술적 특이점</div>
+      <div class="card-body">
+        AI가 인간 지능을 초월하는 순간,<br>
+        <strong class="mark-yellow">문명의 주도권</strong>이 AI에게 넘어갈 수 있다는 경고.
+        <div class="alert-block" style="margin-top:14px; padding:12px 16px;">
+          <div class="alert-body" style="font-size:18px;">유발 하라리: AI는 <strong>"제3의 외계 지능"</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CES 2026 데이터 바 차트 -->
+  <div class="chart-section" id="bar-chart-section">
+    <div class="section-title" style="margin-bottom:20px;">📈 AI 문명 발전 단계</div>
+    <div class="bar-chart">
+      <div class="bar-row" data-target="35">
+        <div class="bar-label">데이터 AI</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background: linear-gradient(90deg, var(--burg), #7A4A5C); --target-width:35%;">
+            <span>2010s</span>
+          </div>
+        </div>
+      </div>
+      <div class="bar-row" data-target="60">
+        <div class="bar-label">생성형 AI</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background: linear-gradient(90deg, var(--orange), #F28C3D); --target-width:60%;">
+            <span>2022~</span>
+          </div>
+        </div>
+      </div>
+      <div class="bar-row" data-target="82">
+        <div class="bar-label">피지컬 AI</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background: linear-gradient(90deg, var(--gold), var(--yellow)); --target-width:82%;">
+            <span style="color:var(--burg);">2026 현재</span>
+          </div>
+        </div>
+      </div>
+      <div class="bar-row" data-target="100">
+        <div class="bar-label">기술적 특이점</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background: linear-gradient(90deg, var(--red), var(--orange)); --target-width:100%;">
+            <span>미래?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:15px; color:#888; margin-top:16px;">※ 개념적 발전 단계 표현 (절대 수치 아님)</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== 2. 두 AI의 대비 ===== -->
+  <div class="section-title">⚡ 두 AI — 문명의 두 수레바퀴</div>
+
+  <div class="ai-compare">
+    <div class="ai-card ai-tech card">
+      <!-- 인공 AI SVG 아이콘 -->
+      <svg viewBox="0 0 120 120" width="100%" style="max-width:100px; margin:0 auto 16px; display:block;" preserveAspectRatio="xMidYMid meet">
+        <circle cx="60" cy="60" r="55" fill="rgba(242,92,5,0.1)" stroke="var(--orange)" stroke-width="2"/>
+        <circle cx="60" cy="60" r="20" fill="none" stroke="var(--orange)" stroke-width="3" style="animation: rotate-slow 4s linear infinite; transform-origin:60px 60px;"/>
+        <circle cx="60" cy="60" r="8" fill="var(--orange)"/>
+        <line x1="60" y1="5"  x2="60" y2="20"  stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="100" x2="60" y2="115" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="5"  y1="60" x2="20"  y2="60" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="60" x2="115" y2="60" stroke="var(--gold)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="60" cy="5"   r="5" fill="var(--gold)"/>
+        <circle cx="60" cy="115" r="5" fill="var(--gold)"/>
+        <circle cx="5"  cy="60"  r="5" fill="var(--gold)"/>
+        <circle cx="115" cy="60" r="5" fill="var(--gold)"/>
+      </svg>
+      <div class="card-label">Artificial Intelligence</div>
+      <div class="card-title">인공지능 AI</div>
+      <div class="card-body">동서고금의 방대한 빅데이터 학습·추론.<br><strong class="mark-gold">과학선(科學仙)</strong> — 지상과학의 결실</div>
+      <div class="badge-wrap" style="justify-content:center; margin-top:16px;">
+        <span class="badge badge-orange">하드 수학</span>
+        <span class="badge badge-cream">이진법</span>
+        <span class="badge badge-burg">기술 문명</span>
+      </div>
+    </div>
+
+    <div class="ai-vs">VS</div>
+
+    <div class="ai-card ai-origin card">
+      <!-- 원형 AI SVG 아이콘 -->
+      <svg viewBox="0 0 120 120" width="100%" style="max-width:100px; margin:0 auto 16px; display:block;" preserveAspectRatio="xMidYMid meet">
+        <circle cx="60" cy="60" r="55" fill="rgba(242,198,61,0.1)" stroke="var(--gold)" stroke-width="2"/>
+        <!-- 팔괘 스타일 원형 문양 -->
+        <g style="animation: rotate-slow 8s linear infinite reverse; transform-origin:60px 60px;">
+          <path d="M60 10 L65 25 L75 20 L68 34 L80 35 L68 42 L72 55 L60 48 L48 55 L52 42 L40 35 L52 34 L45 20 L55 25 Z" fill="var(--gold)" opacity="0.6"/>
+        </g>
+        <circle cx="60" cy="60" r="14" fill="rgba(242,198,61,0.3)" stroke="var(--gold)" stroke-width="2"/>
+        <circle cx="60" cy="60" r="6" fill="var(--gold)"/>
+        <!-- 음효 양효 심볼 -->
+        <text x="60" y="100" text-anchor="middle" font-size="18" fill="var(--burg)" font-family="serif">☯</text>
+      </svg>
+      <div class="card-label">Archetype Intelligence</div>
+      <div class="card-title">원형지능 AI</div>
+      <div class="card-body">인간 의식 깊은 곳의 근원적 자연 지능.<br><strong class="mark-yellow">윤려선(倫呂仙)</strong> — 천상과학의 조화법</div>
+      <div class="badge-wrap" style="justify-content:center; margin-top:16px;">
+        <span class="badge badge-gold">소프트 수학</span>
+        <span class="badge badge-cream">천부경</span>
+        <span class="badge badge-burg">정신 문명</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block" id="q1">
+    <div class="quote-text">
+      미국의 기술 + 중국의 데이터에 이어,<br>
+      <strong style="color:var(--gold);">한국이 디지털 문명의 표준을 제시하는 G3</strong>로 도약할 것이다.<br>
+      한국의 영문화가 결합될 때 비로소 온전한 AI 문명이 완성된다.
+    </div>
+    <div class="quote-source">— 이병한 박사</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== 3. 우주일년 개벽관 ===== -->
+  <div class="section-title">🌌 우주일년 — 선천·후천 개벽의 순환</div>
+
+  <!-- 도넛 차트 + 범례 -->
+  <div class="chart-section" id="donut-section">
+    <div class="donut-section">
+      <div style="flex-shrink:0; width:clamp(200px,40%,300px);">
+        <svg viewBox="0 0 300 300" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;" id="donut-svg">
+          <!-- 배경 원 -->
+          <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(89,60,71,0.1)" stroke-width="40"/>
+          <!-- 봄·여름 (선천) — 약 50% -->
+          <circle cx="150" cy="150" r="110" fill="none" stroke="var(--orange)"
+            stroke-width="40" stroke-dasharray="346 346" stroke-dashoffset="0"
+            transform="rotate(-90 150 150)" style="transition: stroke-dasharray 1.5s ease;" id="arc-spring"/>
+          <!-- 하추교차기 (개벽기) — 약 10% -->
+          <circle cx="150" cy="150" r="110" fill="none" stroke="var(--red)"
+            stroke-width="44" stroke-dasharray="69 623" stroke-dashoffset="-346"
+            transform="rotate(-90 150 150)" id="arc-gaebyeok"/>
+          <!-- 가을·겨울 (후천) — 약 40% -->
+          <circle cx="150" cy="150" r="110" fill="none" stroke="var(--gold)"
+            stroke-width="40" stroke-dasharray="277 415" stroke-dashoffset="-415"
+            transform="rotate(-90 150 150)" id="arc-autumn"/>
+          <!-- 중앙 텍스트 -->
+          <text x="150" y="140" text-anchor="middle" font-size="22" fill="var(--burg)" font-family="'Noto Serif KR', serif" font-weight="700">우주일년</text>
+          <text x="150" y="170" text-anchor="middle" font-size="18" fill="var(--orange)">개벽의 순환</text>
+          <!-- 레이블 화살표들 -->
+          <line x1="150" y1="40" x2="150" y2="22" stroke="var(--orange)" stroke-width="2" marker-end="url(#arr)"/>
+          <text x="150" y="18" text-anchor="middle" font-size="16" fill="var(--orange)">선천 봄여름</text>
+          <line x1="258" y1="195" x2="275" y2="210" stroke="var(--red)" stroke-width="2"/>
+          <text x="276" y="224" text-anchor="middle" font-size="16" fill="var(--red)">개벽기</text>
+          <line x1="90" y1="240" x2="72" y2="252" stroke="var(--gold)" stroke-width="2"/>
+          <text x="55" y="264" text-anchor="middle" font-size="16" fill="#B8860B">후천 가을</text>
+        </svg>
+      </div>
+      <div class="donut-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--orange);"></div>
+          <div><strong>선천 봄·여름 (~50%)</strong><br>탄생과 성장기, 상극 질서</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--red);"></div>
+          <div><strong>하추교차기 개벽 (~10%)</strong><br>지금이 바로 이 시기</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--gold);"></div>
+          <div><strong>후천 가을·겨울 (~40%)</strong><br>상생 문명, 빛의 세계</div>
+        </div>
+        <div class="alert-block" style="margin-top:20px;">
+          <div class="alert-title">⚠️ 지금은 개벽기</div>
+          <div class="alert-body">선천 상극의 질서가 해체되는 전환점. 자연 개벽과 문명의 파도가 더욱 강렬하게 전개된다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== 4. 역사 타임라인 ===== -->
+  <div class="section-title">⏳ 문명 대전환의 역사 흐름</div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:40px;" class="tl-grid">
+    <div class="timeline">
+      <div class="tl-item" id="tl1">
+        <div class="tl-dot"></div>
+        <div class="tl-year">약 1만 년 전</div>
+        <div class="tl-content">
+          <div class="tl-title">🌅 천부경 완성</div>
+          동방 성인들이 우주수학의 원형 완성. 이진법의 뿌리인 음효·양효 체계 수립.
+        </div>
+      </div>
+      <div class="tl-item" id="tl2">
+        <div class="tl-dot" style="background:var(--orange);"></div>
+        <div class="tl-year">1860년 (철종 11년)</div>
+        <div class="tl-content">
+          <div class="tl-title">🌱 동학 창도</div>
+          최수운 대신사 득도, 시천주문 선언. <strong>만사지 조화문명</strong> 예고.
+        </div>
+      </div>
+      <div class="tl-item" id="tl3">
+        <div class="tl-dot" style="background:var(--red);"></div>
+        <div class="tl-year">1871년 (고종 8년)</div>
+        <div class="tl-content">
+          <div class="tl-title">☁️ 증산 상제님 강세</div>
+          동방 간방(한반도)에 강세하시어 천지공사로 후천 상생 문명의 설계도 완성.
+        </div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item" id="tl4">
+        <div class="tl-dot" style="background:var(--gold);"></div>
+        <div class="tl-year">1911년</div>
+        <div class="tl-content">
+          <div class="tl-title">📖 환단고기 출간</div>
+          인류 원형문화와 창세 역사의 정수. 1만 년 한국 뿌리 역사의 집대성.
+        </div>
+      </div>
+      <div class="tl-item" id="tl5">
+        <div class="tl-dot" style="background:var(--burg);"></div>
+        <div class="tl-year">2020년~ (코로나19)</div>
+        <div class="tl-content">
+          <div class="tl-title">🦠 제1차 병란 개벽</div>
+          세 차례 병란 개벽 중 첫 번째. 이제 두 번째 시두 병란을 앞두고 있다.
+        </div>
+      </div>
+      <div class="tl-item" id="tl6">
+        <div class="tl-dot" style="background:var(--yellow);"></div>
+        <div class="tl-year">2026 병오년</div>
+        <div class="tl-content">
+          <div class="tl-title">🐎 문명 대전환 원년</div>
+          붉은 말의 기운. 선천 3천 호모 사피엔스 → <strong>후천 호모 루미너스</strong> 시대 전환 시작.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모바일에서 2열→1열 전환 추가 스타일 -->
+  <style>
+    @media (max-width: 767px) {
+      .tl-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <div class="divider"></div>
+
+  <!-- ===== 5. 혼과 백 생사관 SVG 일러스트 ===== -->
+  <div class="section-title">☯ 한국의 생사관 — 혼(魂)과 백(魄)</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-label">영적 구조</div>
+      <div class="card-title">사람은 혼과 백으로 이루어진다</div>
+      <div class="card-body">
+        사람이 죽으면 두 영으로 나뉜다.<br><br>
+        🌟 <strong class="mark-yellow">혼(魂)</strong> — 양의 영, 하늘로 올라가 신이 된다<br>
+        🌿 <strong class="mark-gold">백(魄)</strong> — 음의 영, 땅으로 돌아가 대지의 품에서 쉰다<br><br>
+        차례(제사)와 성묘를 지내며 자연스럽게 <strong>생사의 도</strong>를 깨닫는 한국의 심오한 정신문화.
+      </div>
+    </div>
+    <div class="card" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <!-- 혼백 SVG 일러스트 -->
+      <svg viewBox="0 0 320 220" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;">
+        <!-- 하늘 영역 -->
+        <defs>
+          <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1A0A10"/>
+            <stop offset="100%" stop-color="rgba(89,60,71,0.3)"/>
+          </linearGradient>
+          <linearGradient id="earth-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(89,60,71,0.2)"/>
+            <stop offset="100%" stop-color="#3A2010"/>
+          </linearGradient>
+          <radialGradient id="spirit-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--yellow)" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- 하늘 배경 -->
+        <rect x="0" y="0" width="320" height="110" fill="url(#sky-grad)" rx="12"/>
+        <!-- 땅 배경 -->
+        <rect x="0" y="110" width="320" height="110" fill="url(#earth-grad)" rx="12"/>
+        <!-- 경계선 -->
+        <line x1="0" y1="110" x2="320" y2="110" stroke="var(--gold)" stroke-width="2" stroke-dasharray="8,4"/>
+
+        <!-- 하늘 레이블 -->
+        <text x="20" y="28" font-size="18" fill="rgba(242,230,61,0.8)" font-family="'Noto Serif KR',serif" font-weight="700">天 하늘</text>
+        <!-- 땅 레이블 -->
+        <text x="20" y="200" font-size="18" fill="rgba(242,197,61,0.7)" font-family="'Noto Serif KR',serif" font-weight="700">地 땅</text>
+
+        <!-- 혼 — 하늘로 상승 (빛나는 구슬) -->
+        <g style="animation: popIn 0.8s ease both 0.5s;">
+          <circle cx="160" cy="55" r="28" fill="url(#spirit-glow)"/>
+          <circle cx="160" cy="55" r="16" fill="var(--yellow)" opacity="0.9" style="animation: flicker 2s ease-in-out infinite;"/>
+          <circle cx="160" cy="55" r="8" fill="#fff" opacity="0.9"/>
+          <text x="160" y="59" text-anchor="middle" font-size="20" fill="var(--burg)" font-family="serif" font-weight="700">魂</text>
+        </g>
+        <!-- 혼 상승 화살표 -->
+        <path d="M160 82 L160 100" stroke="var(--yellow)" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arr-up)" opacity="0.7"/>
+        <text x="178" y="68" font-size="16" fill="rgba(242,230,61,0.8)">양(陽)의 영</text>
+        <text x="178" y="88" font-size="16" fill="rgba(242,230,61,0.6)">→ 신(神)이 됨</text>
+
+        <!-- 백 — 땅으로 하강 (소박한 구슬) -->
+        <g style="animation: popIn 0.8s ease both 1s;">
+          <circle cx="160" cy="165" r="22" fill="rgba(89,60,71,0.3)"/>
+          <circle cx="160" cy="165" r="14" fill="rgba(89,60,71,0.6)" style="animation: flicker 3s ease-in-out infinite;"/>
+          <circle cx="160" cy="165" r="7" fill="rgba(242,197,61,0.8)"/>
+          <text x="160" y="169" text-anchor="middle" font-size="20" fill="var(--yellow)" font-family="serif" font-weight="700">魄</text>
+        </g>
+        <!-- 백 하강 화살표 -->
+        <path d="M160 128 L160 142" stroke="var(--gold)" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.7"/>
+        <text x="178" y="158" font-size="16" fill="rgba(242,197,61,0.8)">음(陰)의 영</text>
+        <text x="178" y="178" font-size="16" fill="rgba(242,197,61,0.6)">→ 대지에서 쉼</text>
+
+        <!-- 인간 (분리 전) -->
+        <g style="animation: popIn 0.8s ease both 0.2s;">
+          <circle cx="40" cy="110" r="16" fill="rgba(242,197,61,0.5)" stroke="var(--gold)" stroke-width="2"/>
+          <text x="40" y="114" text-anchor="middle" font-size="18" fill="var(--burg)">人</text>
+          <!-- 분리 화살표 -->
+          <path d="M56 106 Q90 75 135 60" stroke="var(--yellow)" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.6"/>
+          <path d="M56 114 Q90 145 135 160" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.6"/>
+        </g>
+
+        <!-- 별 장식 -->
+        <circle cx="50" cy="30" r="3" fill="var(--yellow)" opacity="0.6" style="animation:flicker 1.8s ease-in-out infinite;"/>
+        <circle cx="280" cy="20" r="2" fill="var(--gold)" opacity="0.5" style="animation:flicker 2.5s ease-in-out infinite;"/>
+        <circle cx="290" cy="50" r="2" fill="var(--yellow)" opacity="0.4" style="animation:flicker 2s ease-in-out infinite 0.5s;"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== 6. 빛의 인간 — 아리랑 ===== -->
+  <div class="section-title">🌟 빛의 인간 — 아리랑의 본래 뜻</div>
+
+  <div class="light-section" id="light-sec">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px; align-items:start;" class="light-inner">
+      <div>
+        <div class="card-label">원형 문화</div>
+        <div class="card-title" style="font-size:clamp(22px,2.5vw,28px);">아리랑(阿里郞)의 진짜 의미</div>
+        <div class="card-body" style="margin-bottom:20px;">
+          아리랑은 본래 <strong class="mark-yellow">인류의 시조 마고 삼신할머니의 정통 빛의 자손</strong>을 뜻한다.<br><br>
+          <strong>아리(阿里)</strong> — 밝고 순수한 빛<br>
+          <strong>랑(郞)</strong> — 그 빛을 품고 살아가는 인간<br><br>
+          태아의 온몸에 윤려(倫呂)의 빛 에너지를 심어주어 눈부신 빛의 인간으로 태어나게 한 어머니들의 문화.
+        </div>
+        <div class="badge-wrap">
+          <span class="badge badge-gold">삼랑(三郞)</span>
+          <span class="badge badge-burg">화랑(花郞)</span>
+          <span class="badge badge-cream">설랑</span>
+          <span class="badge badge-orange">선비</span>
+        </div>
+      </div>
+      <div>
+        <!-- 빛의 인간 계보 SVG -->
+        <svg viewBox="0 0 280 220" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;">
+          <defs>
+            <radialGradient id="light-glow2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFF9C4" stop-opacity="1"/>
+              <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.2"/>
+            </radialGradient>
+          </defs>
+
+          <!-- 중앙 빛 기둥 -->
+          <line x1="140" y1="10" x2="140" y2="210"
+            stroke="url(#sun-line)" stroke-width="3"
+            stroke-dasharray="1000" stroke-dashoffset="1000"
+            style="animation: drawLine 2s ease 0.5s forwards;"
+            id="light-pillar"/>
+          <defs>
+            <linearGradient id="sun-line" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--yellow)"/>
+              <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+
+          <!-- 마고 삼신할머니 -->
+          <circle cx="140" cy="28" r="20" fill="url(#light-glow2)" stroke="var(--gold)" stroke-width="2" style="animation: flicker 3s ease-in-out infinite;"/>
+          <text x="140" y="32" text-anchor="middle" font-size="19" fill="var(--burg)" font-family="'Noto Serif KR',serif" font-weight="700">마고</text>
+          <text x="140" y="54" text-anchor="middle" font-size="16" fill="var(--burg)">삼신할머니</text>
+
+          <!-- 계보 노드들 -->
+          <!-- 배달·조선 삼랑 -->
+          <circle cx="60"  cy="100" r="14" fill="rgba(242,197,61,0.4)" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="60" y="104" text-anchor="middle" font-size="16" fill="var(--burg)" font-weight="700">삼랑</text>
+          <text x="60" y="120" text-anchor="middle" font-size="14" fill="var(--burg)">배달·조선</text>
+          <line x1="125" y1="44" x2="74" y2="88" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+
+          <!-- 신라 화랑 -->
+          <circle cx="140" cy="100" r="14" fill="rgba(242,197,61,0.4)" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="140" y="104" text-anchor="middle" font-size="16" fill="var(--burg)" font-weight="700">화랑</text>
+          <text x="140" y="120" text-anchor="middle" font-size="14" fill="var(--burg)">신라</text>
+          <line x1="140" y1="48" x2="140" y2="86" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+
+          <!-- 고려 설랑 -->
+          <circle cx="220" cy="100" r="14" fill="rgba(242,197,61,0.4)" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="220" y="104" text-anchor="middle" font-size="16" fill="var(--burg)" font-weight="700">설랑</text>
+          <text x="220" y="120" text-anchor="middle" font-size="14" fill="var(--burg)">고려</text>
+          <line x1="155" y1="44" x2="206" y2="88" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+
+          <!-- 아리랑 -->
+          <circle cx="140" cy="175" r="22" fill="rgba(242,230,61,0.5)" stroke="var(--yellow)" stroke-width="2.5" style="animation: flicker 2s ease-in-out infinite;"/>
+          <text x="140" y="180" text-anchor="middle" font-size="20" fill="var(--burg)" font-family="'Noto Serif KR',serif" font-weight="900">아리랑</text>
+          <text x="140" y="200" text-anchor="middle" font-size="14" fill="var(--burg)">빛의 인간</text>
+          <line x1="66"  y1="114" x2="120" y2="155" stroke="var(--orange)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="140" y1="114" x2="140" y2="153" stroke="var(--orange)" stroke-width="1.5" opacity="0.6"/>
+          <line x1="214" y1="114" x2="160" y2="155" stroke="var(--orange)" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- BTS 레이블 -->
+          <text x="140" y="215" text-anchor="middle" font-size="15" fill="var(--orange)" font-weight="700">→ BTS · 한류의 혼</text>
+        </svg>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 767px) {
+        .light-inner { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===== 7. 핵심 개념 정리 3열 ===== -->
+  <div class="section-title">🔑 핵심 개념 한눈에</div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">문명사적 전환</div>
+      <div class="card-title">호모 루미너스 시대</div>
+      <div class="card-body">
+        선천 3천 년<br>
+        <strong class="mark-gold">호모 사피엔스</strong><br>
+        (상극 문명)<br>
+        ↓ 병오년 전환<br>
+        후천<br>
+        <strong class="mark-yellow">호모 루미너스</strong><br>
+        (우주 대광명 태양 인간)
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">우주수학의 뿌리</div>
+      <div class="card-title">이진법의 기원</div>
+      <div class="card-body">
+        오늘날 AI 디지털 문명의 토대인 이진법(0·1)의 뿌리는 약<strong class="mark-yellow">1만 년 전 천부경</strong>과 하도낙서의 음효(━ ━)·양효(━)에 있다.
+      </div>
+      <div class="arrow-connect" style="font-size:18px; margin:12px 0;">천부경 → 하도낙서 → 이진법 → AI</div>
+    </div>
+    <div class="card">
+      <div class="card-label">피난도수 준비</div>
+      <div class="card-title">생존 지혜 필수</div>
+      <div class="card-body">
+        해안가·화산지대·전쟁 위험 지역 거주자는 <strong class="mark-yellow">피난도수를 생활화</strong>해야 한다.<br><br>
+        한반도(간방)는 물개벽·불개벽·병란 개벽 모두 몰려오는 개벽의 중심 땅.
+      </div>
+    </div>
+  </div>
+
+  <!-- 일론 머스크 인용 -->
+  <div class="quote-block" id="q2">
+    <div class="quote-text">
+      우리가 가는 길은 마치 <strong style="color:var(--gold);">블랙홀의 사건 지평선을 넘는 것</strong>과 같다.<br>
+      AI 문명이 어디를 향해 가는지 모른 채 우리 모두가 빠르게 끌려가고 있다.<br>
+      <strong style="color:var(--yellow);">진실과 아름다움을 향한 호기심만이 인류를 보호할 것이다.</strong>
+    </div>
+    <div class="quote-source">— 일론 머스크</div>
+  </div>
+
+  <!-- ===== 8. STV 상생방송 ===== -->
+  <div class="section-title">📺 후천 문명을 여는 STV 상생방송</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-label">프로그램 소개</div>
+      <div class="card-title">🌄 천상의 빛 프로그램</div>
+      <div class="card-body">
+        매일 아침·저녁 우주 근원의 빛을 몸과 마음에 채우는 수행 방송.<br><br>
+        우주 광명의 <strong class="mark-yellow">윤려화 빛성문화 치유 수행</strong>으로 후천 지상선경 시대의 깨달음을 상징.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">2026 신규 방영</div>
+      <div class="card-title">📚 도전(道典) 강독</div>
+      <div class="card-body">
+        50여 년간의 기원장 답사로 완성된 <strong class="mark-gold">9천 가울문명</strong> 도전 강독을 STV를 통해 본격 방영.<br><br>
+        후천만년 무궁대도 시대의 진면목을 지구촌 전역에 전달.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.wrapper -->
+
+<!-- ===== 푸터 ===== -->
+<footer>
+  <div class="wrapper" style="padding-bottom:0;">
+    <div class="footer-grid">
+      <div>
+        <strong>출처 및 참고</strong><br>
+        STV 상생방송 2026 병오년 신년 메시지<br>
+        CES 2026 (2026.1.6~9, 라스베이거스)<br>
+        증산도 도전(道典) · 천부경 · 환단고기
+      </div>
+      <div>
+        <strong>핵심 키워드</strong><br>
+        병오년 · 피지컬 AI · 원형지능 · 우주일년<br>
+        하추교차기 개벽 · 호모 루미너스 · 아리랑<br>
+        증산 상제님 · STV 상생방송
+      </div>
+    </div>
+    <p style="border-top:1px solid rgba(242,197,61,0.2); padding-top:16px; font-size:15px; opacity:0.6;">
+      본 인포그래픽은 영상 강연 내용을 그래픽 레코딩 형식으로 재구성한 것입니다.
+      GitHub Pages 배포용 단일 HTML 파일 · UTF-8 인코딩
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ===== IntersectionObserver — 스크롤 애니메이션 ===== */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // staggered 딜레이
+      const idx = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+      entry.target.style.transitionDelay = (idx * 0.1) + 's';
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+// 애니메이션 대상 요소 등록
+document.querySelectorAll('.card, .quote-block, .chart-section, .tl-item, .ai-card, .light-section').forEach(el => {
+  observer.observe(el);
+});
+
+/* ===== 바 차트 애니메이션 ===== */
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.bar-row').forEach((row, i) => {
+        setTimeout(() => {
+          row.classList.add('animated');
+        }, i * 200);
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const barSection = document.getElementById('bar-chart-section');
+if (barSection) barObserver.observe(barSection);
+
+/* ===== 도넛 차트 초기화 (스크롤 진입 시 arc 애니메이션) ===== */
+const donutSection = document.getElementById('donut-section');
+let donutAnimated = false;
+
+const donutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !donutAnimated) {
+      donutAnimated = true;
+      donutSection.classList.add('visible');
+      // arc들을 순서대로 표시 (이미 CSS로 배치됨 — 별도 JS 없이도 OK)
+    }
+  });
+}, { threshold: 0.2 });
+
+if (donutSection) donutObserver.observe(donutSection);
+
+/* ===== SVG drawLine 애니메이션 (스크롤 진입 시) ===== */
+const lightPillar = document.getElementById('light-pillar');
+const lightObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && lightPillar) {
+      lightPillar.style.strokeDashoffset = '0';
+      lightPillar.style.transition = 'stroke-dashoffset 2s ease';
+    }
+  });
+}, { threshold: 0.3 });
+
+const lightSec = document.getElementById('light-sec');
+if (lightSec) lightObserver.observe(lightSec);
+</script>
+</body>
+</html>
